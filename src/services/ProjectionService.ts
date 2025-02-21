@@ -11,6 +11,8 @@ export interface ProjectionAdjustment {
 export class ProjectionService {
 	/**
 	 * Calculate/Project the number of customers for a given date
+	 *  - Calculation is done based on the start date given, and no. customers with growth rate
+	 *  - Adjustments can be made to the growth rate for a specific date
 	 *
 	 * @param num_of_customers
 	 * @param date in format of DD/YY/YYYY
