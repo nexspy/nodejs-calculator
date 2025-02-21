@@ -20,6 +20,7 @@ router.post(
 			.optional()
 			.isInt({ min: 1 })
 			.withMessage("Months must be a positive integer"),
+		body("adjustments").optional(),
 	],
 	CalculateProjection
 );

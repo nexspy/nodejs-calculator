@@ -14,7 +14,8 @@ export const CalculateProjection = (req: Request, res: Response): void => {
 	}
 
 	// Get input from post
-	const { num_of_customers, date, monthly_growth_rate, months } = req.body;
+	const { num_of_customers, date, monthly_growth_rate, months, adjustments } =
+		req.body;
 
 	// Calculate projection
 	const projection: ProjectionResponse[] =
@@ -22,7 +23,8 @@ export const CalculateProjection = (req: Request, res: Response): void => {
 			num_of_customers,
 			date,
 			monthly_growth_rate,
-			months
+			months,
+			adjustments
 		);
 
 	// Send response

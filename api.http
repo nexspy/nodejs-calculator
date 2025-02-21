@@ -54,3 +54,21 @@ Content-Type: application/json
     "monthly_growth_rate": 0.2,
     "months": 60
 }
+
+# Adjustment for specific month
+
+POST http://localhost:5001/api/v1/projections HTTP/1.1
+Content-Type: application/json
+
+{
+    "num_of_customers": 10,
+    "date": "12/02/2025",
+    "monthly_growth_rate": 0.2,
+    "months": 6,
+    "adjustments": [
+        {
+            "date": "12/5/2025",
+            "growth_rate": 0.5
+        }
+    ]
+}
