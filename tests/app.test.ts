@@ -5,12 +5,14 @@ import app from "../src/app"; // Your Express app
 
 chai.use(chaiHttp);
 
+const API_VERSION = process.env.API_VERSION || "/api/v1";
+
 describe("App Route Test", () => {
 	it("should return API is healthy", async () => {
 		try {
 			const res = await chai
 				.request(app as Application)
-				.get("/api/health");
+				.get(`${API_VERSION}/health`);
 			// Assertions
 			expect(res).to.have.status(200);
 			expect(res.text).to.equal("API is healthy");
@@ -28,7 +30,9 @@ describe("App Route Test", () => {
 
 	it("should return Uniflow API", async () => {
 		try {
-			const res = await chai.request(app as Application).get("/");
+			const res = await chai
+				.request(app as Application)
+				.get(`${API_VERSION}`);
 			// Assertions
 			expect(res).to.have.status(200);
 			expect(res.text).to.equal("Uniflow API");
