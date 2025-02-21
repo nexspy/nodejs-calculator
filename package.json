@@ -1,0 +1,31 @@
+{
+	"scripts": {
+		"start": "nodemon ./src/index.ts",
+		"build": "rm -rf dist && tsup src --format esm",
+		"test": "mocha --timeout 30000 -r ts-node/register 'tests/**/*.test.ts'",
+		"test:coverage": "nyc mocha --require ts-node/register 'tests/**.test.ts'"
+	},
+	"dependencies": {
+		"axios": "^1.7.9",
+		"express": "^4.21.2",
+		"nock": "^13.5.6",
+		"nyc": "^17.1.0",
+		"tsup": "^8.3.5"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.3.0",
+		"@types/express": "^5.0.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "^22.10.6",
+		"@types/sinon": "^17.0.3",
+		"@types/supertest": "^6.0.2",
+		"chai": "^4.3.4",
+		"chai-http": "^4.3.0",
+		"mocha": "^9.2.0",
+		"nodemon": "^3.1.9",
+		"sinon": "^19.0.2",
+		"supertest": "^7.0.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.3"
+	}
+}
