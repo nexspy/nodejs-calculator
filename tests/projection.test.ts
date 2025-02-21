@@ -1,7 +1,7 @@
 import chai, { expect } from "chai";
 import chaiHttp from "chai-http";
-import { Application } from "express"; // Import Express types
-import app from "../src/app"; // Your Express app
+import { Application } from "express";
+import app from "../src/app";
 import { ProjectionType } from "dtos/ProjectionInputDto";
 
 chai.use(chaiHttp);
