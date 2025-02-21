@@ -1,6 +1,6 @@
 export interface ProjectionResponse {
 	value: number;
-	label: string;
+	date: string;
 }
 
 export interface ProjectionAdjustment {
@@ -67,8 +67,8 @@ export class ProjectionService {
 			// only show 2 decimal places
 			result = Math.round(result * 100) / 100;
 			projectionPerMonth.push({
-				value: result,
-				label: label,
+				value: Math.round(result),
+				date: label,
 			});
 			totalMonths--;
 		}

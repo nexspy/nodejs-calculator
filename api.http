@@ -72,3 +72,33 @@ Content-Type: application/json
         }
     ]
 }
+
+## Response
+{
+    "projection": [
+        {
+            "value": 12,
+            "date": "12/3/2025"
+        },
+        {
+            "value": 14.4,
+            "date": "12/4/2025"
+        },
+        {
+            "value": 21.6,
+            "date": "12/5/2025"
+        },
+        {
+            "value": 25.92,
+            "date": "12/6/2025"
+        },
+        {
+            "value": 31.1,
+            "date": "12/7/2025"
+        },
+        {
+            "value": 37.32,
+            "date": "12/8/2025"
+        }
+    ]
+}

@@ -1,4 +1,22 @@
-# Nodejs Sample
+# Customer Growth Rate Project Calculator
+
+## Run commands
+
+```bash
+npm start
+```
+
+### Run Tests
+
+```bash
+npm run test
+```
+
+For visual results for automated testing
+
+```bash
+npm run test:coverage
+```
 
 ## Project
 
@@ -42,22 +60,4 @@ We can add adjustments for specific months by passing an array of month-rate val
 		}
 	]
 }
-```
-
-## Run commands
-
-```bash
-npm start
-```
-
-### Run Tests
-
-```bash
-npm run test
-```
-
-For visual results for automated testing
-
-```bash
-npm run test:coverage
 ```
