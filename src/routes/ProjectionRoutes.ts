@@ -16,6 +16,10 @@ router.post(
 		body("monthly_growth_rate")
 			.isFloat({ min: 0 })
 			.withMessage("Monthly growth rate must be a positive number"),
+		body("months")
+			.optional()
+			.isInt({ min: 1 })
+			.withMessage("Months must be a positive integer"),
 	],
 	CalculateProjection
 );

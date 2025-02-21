@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
 import { validationResult } from "express-validator";
+import {
+	ProjectionResponse,
+	ProjectionService,
+} from "../services/ProjectionService";
 
 export const CalculateProjection = (req: Request, res: Response): void => {
 	// Check for validation errors
@@ -10,13 +14,19 @@ export const CalculateProjection = (req: Request, res: Response): void => {
 	}
 
 	// Get input from post
-	const { num_of_customers, date, monthly_growth_rate } = req.body;
-
-	console.log("Input:");
-	console.log("Number of customers: " + num_of_customers);
+	const { num_of_customers, date, monthly_growth_rate, months } = req.body;
 
 	// Calculate projection
+	const projection: ProjectionResponse[] =
+		ProjectionService.calculateProjection(
+			num_of_customers,
+			date,
+			monthly_growth_rate,
+			months
+		);
 
 	// Send response
-	res.status(200).send("Calculating projection");
+	res.status(200).json({
+		projection,
+	});
 };

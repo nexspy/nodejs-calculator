@@ -9,12 +9,13 @@ chai.use(chaiHttp);
 const API_VERSION = process.env.API_VERSION || "/api/v1";
 
 describe("Projection Test", () => {
-	it("should return string", async () => {
+	it("should return 200", async () => {
 		try {
 			const projectionData: ProjectionType = {
-				num_of_customers: 100,
-				date: "12/01/2024",
-				monthly_growth_rate: 5.5,
+				num_of_customers: 5,
+				date: "12/01/2025",
+				monthly_growth_rate: 2,
+				months: 5,
 			};
 
 			const res = await chai
@@ -24,7 +25,7 @@ describe("Projection Test", () => {
 
 			// Assertions
 			expect(res).to.have.status(200);
-			expect(res.text).to.equal("Calculating projection");
+			expect(res.body.projection[0]?.value).to.equal(15);
 		} catch (err: unknown) {
 			// Explicitly type `err` as an unknown first
 			if (err instanceof Error) {
