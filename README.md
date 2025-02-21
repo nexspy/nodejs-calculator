@@ -18,7 +18,7 @@ with following data:
 }
 ```
 
-Here, we are caculating using months instead of years to have more granular control on the timeline adjustments.
+Here, we are calculating using months instead of years to have more granular control on the timeline adjustments.
 
 ## Run commands
 
