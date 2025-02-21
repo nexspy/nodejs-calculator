@@ -1,0 +1,13 @@
+# create compose file for this project
+version: "3.7"
+services:
+    express:
+        container_name: nodejs-sample
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/app
+        ports:
+            - "5001:5001"
+        command: npm start
