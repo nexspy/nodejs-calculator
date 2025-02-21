@@ -1,0 +1,56 @@
+# Index request
+GET http://localhost:5001/api/v1 HTTP/1.1
+
+# Health check request
+
+GET http://localhost:5001/api/v1/health HTTP/1.1
+
+# Calculate Projection request
+
+POST http://localhost:5001/api/v1/projections HTTP/1.1
+Content-Type: application/json
+
+{
+    "num_of_customers": 10,
+    "date": "12/02/2025",
+    "monthly_growth_rate": 0.2,
+    "months": 5
+}
+
+
+
+# Calculate Projection request for Single Month
+
+POST http://localhost:5001/api/v1/projections HTTP/1.1
+Content-Type: application/json
+
+{
+    "num_of_customers": 10,
+    "date": "12/02/2025",
+    "monthly_growth_rate": 0.2,
+    "months": 1
+}
+
+# Calculate Projection request for Current Year
+
+POST http://localhost:5001/api/v1/projections HTTP/1.1
+Content-Type: application/json
+
+{
+    "num_of_customers": 10,
+    "date": "12/02/2025",
+    "monthly_growth_rate": 0.2,
+    "months": 10
+}
+
+# Calculate Projection request for Next 5 Years
+
+POST http://localhost:5001/api/v1/projections HTTP/1.1
+Content-Type: application/json
+
+{
+    "num_of_customers": 10,
+    "date": "12/02/2025",
+    "monthly_growth_rate": 0.2,
+    "months": 60
+}
